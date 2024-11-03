@@ -5,7 +5,8 @@
     "prettier"
   ],
   "plugins": [
-    "check-file"
+    "check-file",
+    "n"
   ],
   "rules": {
     "prefer-arrow-callback": [
@@ -35,6 +36,9 @@
       {
         "src/**/!^[.*": "KEBAB_CASE"
       }
+    ],
+    "n/no-process-env": [
+      "error"
     ]
   }
 }
