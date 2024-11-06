@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 
+import CompanyDetails from "@/components/company-details";
 import { ICompany } from "@/models/company";
 
 export async function generateStaticParams() {
@@ -33,10 +34,17 @@ export default async function CompanyPage({
 
   return (
     <main className="min-h-screen">
-      <h1 className="text-center text-4xl font-bold">{selectedCompany.name}</h1>
-      <section className="container mx-auto py-8">
-        {selectedCompany.companyDescription.keyOfferings}
-      </section>
+      {/* <section className="container mx-auto py-20">
+        <div className="mb-8 text-center">
+          <h1 className="mb-4 font-bricolage text-5xl font-bold">
+            {selectedCompany.name}
+          </h1>
+          <p className="mb-8 italic text-muted-foreground">
+            {selectedCompany.companyDescription.overview.missionStatement}
+          </p>
+        </div>
+      </section> */}
+      <CompanyDetails company={selectedCompany} />
     </main>
   );
 }

@@ -14,14 +14,15 @@ const HeroSection = async () => {
   );
 
   return (
-    <section className="container mx-auto py-8">
+    <section className="container mx-auto py-20">
       <div className="mb-8 text-center">
-        <h1 className="mb-4 font-bricolage text-6xl font-bold">
-          AI for Healthcare Hub
+        <h1 className="mb-4 font-bricolage text-5xl font-bold md:text-6xl">
+          Explore AI for healthcare
         </h1>
         <p className="mb-8 text-muted-foreground">
-          Explore how artificial intelligence in healthcare is enhancing patient
-          outcomes and transforming medical practices.
+          Discover innovative artificial intelligence applications in
+          healthcare, focusing on medical imaging analysis, electronic health
+          records, and drug discovery and development.
         </p>
         <SearchBar />
       </div>

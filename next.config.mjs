@@ -11,6 +11,9 @@ const nextConfig = {
   // experimental: {
   //   typedRoutes: true,
   // },
+  images: {
+    remotePatterns: [{ hostname: "utfs.io" }],
+  },
 };
 
 export default nextConfig;

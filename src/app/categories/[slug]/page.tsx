@@ -34,10 +34,13 @@ export default async function CategoryPage({
 
   return (
     <main className="min-h-screen">
-      <h1 className="text-center text-4xl font-bold">
-        {allCompaniesInCategory.name}
-      </h1>
-      <section className="container mx-auto py-8">
+      <section className="container mx-auto py-20">
+        <div className="mb-8 text-center">
+          <h1 className="mb-4 font-bricolage text-5xl font-bold md:text-6xl">
+            {allCompaniesInCategory.name}
+          </h1>
+          <p className="mb-8 text-muted-foreground">subheadling</p>
+        </div>
         <CompaniesList companies={allCompaniesInCategory.companies} />
       </section>
     </main>

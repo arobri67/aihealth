@@ -17,13 +17,13 @@ const CompaniesList = ({ companies }: { companies: ICompany[] }) => {
               {company.category.map((category) => (
                 <span
                   key={category}
-                  className="rounded-full bg-secondary px-3 py-1 text-xs text-secondary-foreground">
+                  className="rounded-full bg-secondary/50 px-3 py-1 text-xs text-secondary-foreground">
                   {category}
                 </span>
               ))}
             </div>
             <p className="text-sm text-muted-foreground">
-              {company.briefDescription}
+              {company.companyDescription.briefDescription}
             </p>
           </CardContent>
           <CardFooter className="p-6 pt-0">
