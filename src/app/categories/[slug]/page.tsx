@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 
-import CompaniesList from "@/components/companies-list";
+import { CompaniesList } from "@/components/companies-list";
 import { ICategory } from "@/models/category";
 
 export async function generateStaticParams() {

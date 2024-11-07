@@ -5,7 +5,7 @@ const NewsletterSection = () => {
         <h2 className="mb-4 font-bricolage text-5xl font-bold md:text-6xl">
           Newsletter
         </h2>
-        <p className="text-gray-6000 mb-8">
+        <p className="mb-8">
           Stay up to date with our latest news, updates, and exclusive offers.
           Don&apos;t miss out!
         </p>

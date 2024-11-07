@@ -1,33 +1,27 @@
 import { ICategory } from "@/models/category";
-import { ICompany } from "@/models/company";
 
 import CategoryFilter from "../category-filter";
-import CompaniesList from "../companies-list";
-import SearchBar from "../search-bar";
 
 const HeroSection = async () => {
-  const companies = await fetch("http://localhost:3000/api/companies").then(
-    (res) => res.json() as Promise<ICompany[]>
-  );
   const categories = await fetch("http://localhost:3000/api/categories").then(
     (res) => res.json() as Promise<ICategory[]>
   );
 
   return (
-    <section className="container mx-auto py-20">
-      <div className="mb-8 text-center">
+    <section className="relative h-[500px] py-20">
+      <div className="absolute inset-0 -z-10 bg-[url('/bg-image/bg-hero2.jpg')] bg-cover bg-center opacity-15" />
+      <div className="absolute bottom-0 h-[100px] w-full bg-gradient-to-b from-transparent to-background" />
+      <div className="container mx-auto mb-8 flex h-full flex-col items-center justify-center gap-5 text-center">
         <h1 className="mb-4 font-bricolage text-5xl font-bold md:text-6xl">
           Explore AI for healthcare
         </h1>
-        <p className="mb-8 text-muted-foreground">
+        <p className="mb-8 text-lg text-muted-foreground">
           Discover innovative artificial intelligence applications in
           healthcare, focusing on medical imaging analysis, electronic health
           records, and drug discovery and development.
         </p>
-        <SearchBar />
+        <CategoryFilter categories={categories} />
       </div>
-      <CategoryFilter categories={categories} />
-      <CompaniesList companies={companies} />
     </section>
   );
 };
