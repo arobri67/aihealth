@@ -9,7 +9,7 @@ const HeroSection = async () => {
 
   return (
     <section className="relative h-[500px] py-20">
-      <div className="absolute inset-0 -z-10 bg-[url('/bg-image/bg-hero2.jpg')] bg-cover bg-center opacity-15" />
+      <div className="absolute inset-0 -z-10 bg-[url('/bg-image/bg-hero.webp')] bg-cover bg-center opacity-15" />
       <div className="absolute bottom-0 h-[100px] w-full bg-gradient-to-b from-transparent to-background" />
       <div className="container mx-auto mb-8 flex h-full flex-col items-center justify-center gap-5 text-center">
         <h1 className="mb-4 font-bricolage text-5xl font-bold md:text-6xl">
