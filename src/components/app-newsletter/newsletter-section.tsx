@@ -3,11 +3,11 @@ const NewsletterSection = () => {
     <section className="container mx-auto py-20">
       <div className="mb-8 text-center">
         <h2 className="mb-4 font-bricolage text-5xl font-bold md:text-6xl">
-          Newsletter
+          Stay Updated with AI for Healthcare
         </h2>
         <p className="mb-8">
-          Stay up to date with our latest news, updates, and exclusive offers.
-          Don&apos;t miss out!
+          Subscribe to our newsletter for the latest updates on artificial
+          intelligence in healthcare.
         </p>
       </div>
     </section>

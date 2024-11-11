@@ -9,7 +9,6 @@ export interface ICompany extends Document {
   image: {
     name: string;
     key: string;
-    url: string;
   };
   companyDescription: {
     briefDescription: string;
@@ -39,7 +38,11 @@ const CompanySchema: Schema = new Schema(
     category: {
       type: [String],
       required: true,
-      enum: ["Administration", "Research & Development", "Clinical"],
+      enum: [
+        "Administration & Operations",
+        "Research & Development",
+        "Clinical Applications",
+      ],
     },
     image: { type: Object, required: true },
     companyDescription: { type: Object, required: true },

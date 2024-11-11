@@ -3,6 +3,7 @@ import Image from "next/image";
 import { IconBrandLinkedin, IconBrandX } from "@tabler/icons-react";
 import { Calendar, CheckCircle2, ExternalLink, MapPin } from "lucide-react";
 
+import { env } from "@/env/server";
 import { ICompany } from "@/models/company";
 
 import { Button, Card, CardContent, CardHeader, CardTitle } from "./ui";
@@ -99,16 +100,17 @@ const CompanyDetails = ({ company }: { company: ICompany }) => {
               )}
             </ul>
           </div>
-          <div className="relative hidden aspect-video overflow-hidden rounded-lg md:block">
+          <div className="relative hidden overflow-hidden md:flex md:justify-center">
             <a
               href={company.contactInformation.websiteLink}
               target="_blank"
               rel="noopener noreferrer">
               <Image
-                src={`${company.image.url}/${company.image.name}`}
+                src={`https://utfs.io/a/${env.UTSFS_ID}/${company.image.key}`}
                 alt={`${company.name} website screenshot`}
-                fill
-                className="object-cover"
+                width={800}
+                height={600}
+                className="object-fit"
               />
             </a>
           </div>

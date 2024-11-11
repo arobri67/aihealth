@@ -18,7 +18,7 @@ export default function LoadMoreButton({
 
   return (
     <Button
-      className="text-lg font-semibold"
+      className="rounded-full text-lg font-semibold"
       size="lg"
       onClick={handleLoadMore}>
       View all Companies
