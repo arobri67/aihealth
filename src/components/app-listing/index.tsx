@@ -12,7 +12,7 @@ const ListingSection = async () => {
 
   return (
     <SearchProvider>
-      <section className="container mx-auto flex flex-col items-center">
+      <section className="container mx-auto flex flex-col items-center pb-20 pt-10">
         <SearchBar />
         <FilteredCompaniesList companies={companies} />
         <LoadMoreButton totalCompanies={companies.length} />

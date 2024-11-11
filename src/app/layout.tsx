@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bricolage_Grotesque, Inter } from "next/font/google";
 
 import AppNavBar from "@/components/app-navbar";
+import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
 
 import "./globals.css";
@@ -50,6 +51,7 @@ export default function RootLayout({
         )}>
         <AppNavBar />
         {children}
+        <Toaster />
       </body>
     </html>
   );
