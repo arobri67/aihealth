@@ -3,7 +3,7 @@ import SectionHeader from "../section-header";
 
 const NewsletterSection = () => {
   return (
-    <section className="h-full bg-accent/30 py-20">
+    <section className="h-full bg-accent/30 py-20" id="newsletter">
       <div className="container mx-auto">
         <SectionHeader
           title="Stay Updated on AI for Healthcare"

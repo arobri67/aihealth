@@ -1,3 +1,4 @@
+import AddCompany from "@/components/app-add-company";
 import FAQSection from "@/components/app-faq/faq-section";
 import HeroSection from "@/components/app-hero/hero-section";
 import ListingSection from "@/components/app-listing/index";
@@ -10,6 +11,7 @@ export default function Home() {
       <ListingSection />
       <NewsletterSection />
       <FAQSection />
+      <AddCompany />
     </div>
   );
 }

@@ -10,13 +10,14 @@
     "*.css": "tailwindcss"
   },
   "typescript.tsdk": "node_modules/typescript/lib", //to use the same TS than nextjs
-  // "workbench.editor.customLabels.patterns": {
-  //   // Next JS
-  //   "**/src/app/**/page.tsx": "${dirname} - Page",
-  //   "**/src/app/**/index.tsx": "${dirname} - Index",
-  //   "**/src/app/**/layout.tsx": "${dirname} - Layout",
-  //   "**/src/app/**/template.tsx": "${dirname} - Template",
-  //   "**/src/components/**/index.tsx": "${dirname} - Component",
-  //   "**/src/app/api/**/route.ts": "${dirname} - Route"
-  // }
+  "workbench.editor.customLabels.patterns": {
+    // Next JS
+    "**/src/app/**/page.tsx": "${dirname} - Page",
+    "**/src/app/**/index.tsx": "${dirname} - Index",
+    "**/src/app/**/layout.tsx": "${dirname} - Layout",
+    "**/src/app/**/template.tsx": "${dirname} - Template",
+    "**/src/components/**/index.tsx": "${dirname} - Component",
+    "**/src/app/api/**/route.ts": "${dirname} - Route"
+  },
+  "typescript.tsserver.log": "verbose"
 }

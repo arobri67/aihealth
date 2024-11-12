@@ -22,7 +22,7 @@ const CompanyDetails = ({ company }: { company: ICompany }) => {
                 {company.category.map((category) => (
                   <span
                     key={category}
-                    className="rounded-full bg-secondary/50 px-3 py-1 text-sm text-secondary-foreground">
+                    className="rounded-full bg-secondary/30 px-3 py-1 text-sm text-secondary-foreground">
                     {category}
                   </span>
                 ))}

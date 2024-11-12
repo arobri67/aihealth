@@ -19,7 +19,14 @@ const HeroSection = async () => {
         <p className="mb-8 text-base text-muted-foreground md:text-lg">
           Discover innovative artificial intelligence applications in
           healthcare, focusing on medical imaging analysis, electronic health
-          records, and drug discovery and development.
+          records, and drug discovery and development. Curated by{" "}
+          <a
+            href="https://x.com/irboa67"
+            target="_blank"
+            rel="noreferrer"
+            className="text-primary">
+            @irbo67
+          </a>
         </p>
         <CategoryFilter categories={categories} />
       </div>

@@ -22,7 +22,7 @@ const FAQSection = async () => {
             <AccordionItem
               key={faq._id}
               value={faq.order}
-              className="rounded-3xl border border-accent/20 bg-card px-12 py-6 shadow">
+              className="rounded-3xl border border-accent/20 bg-card px-6 py-3 shadow">
               <AccordionTrigger className="text-lg">
                 {faq.question}
               </AccordionTrigger>
