@@ -15,7 +15,7 @@ const SearchBar = () => {
         <Input
           type="search"
           placeholder="Search among 80+ companies..."
-          className="h-16 rounded-full bg-background pl-12 text-lg file:text-lg placeholder:text-lg focus:text-lg focus:outline-primary/10"
+          className="h-12 rounded-full bg-background pl-12 focus:outline-primary/10 md:h-16 md:text-lg md:file:text-lg md:placeholder:text-lg md:focus:text-lg"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />

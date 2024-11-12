@@ -7,10 +7,12 @@ const SectionHeader = ({
 }) => {
   return (
     <div className="text-center">
-      <h2 className="mb-4 font-bricolage text-5xl font-bold md:text-6xl">
+      <h2 className="mb-4 font-bricolage text-4xl font-bold md:text-5xl">
         {title}
       </h2>
-      <p className="mb-8 text-lg text-muted-foreground">{subtitle}</p>
+      <p className="mb-8 text-base text-muted-foreground md:text-lg">
+        {subtitle}
+      </p>
     </div>
   );
 };

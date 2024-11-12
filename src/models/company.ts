@@ -51,7 +51,7 @@ const CompanySchema: Schema = new Schema(
   { timestamps: true, collection: "Company" }
 );
 
-// Create and export the Listing model
+// Create and export the Company model
 const Company: Model<ICompany> =
   mongoose.models.Company || mongoose.model<ICompany>("Company", CompanySchema);
 export default Company;
