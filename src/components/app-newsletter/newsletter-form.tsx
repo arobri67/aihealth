@@ -9,8 +9,7 @@ import { z } from "zod";
 import { subscribe } from "@/lib/actions";
 import { NewsletterFormSchema } from "@/lib/schemas";
 
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
+import { Button, Input } from "../ui";
 
 type Inputs = z.infer<typeof NewsletterFormSchema>;
 
@@ -51,7 +50,7 @@ export const NewsletterForm = () => {
             type="email"
             placeholder="Email"
             autoComplete="email"
-            className="h-12 rounded-full bg-background pl-12 text-lg file:text-lg placeholder:text-lg focus:text-lg focus:outline-primary/10 md:text-lg"
+            className="h-12 rounded-full bg-background pl-12 text-lg file:text-lg placeholder:text-lg focus:text-lg focus:shadow-lg focus:outline-primary/10 md:text-lg"
             {...register("email")}
           />
           {/* display the error message */}

@@ -11,10 +11,11 @@ const HeroSection = async () => {
     //TODO: move out the background from the public folder, if i use file, size 100vw is to say how much width it shoudl take
     <section className="relative h-[600px]">
       <div className="absolute inset-0 -z-10 bg-[url('/bg-image/bg-hero.webp')] bg-cover bg-center opacity-15" />
-      {/* <div className="absolute bottom-0 h-[100px] w-full bg-gradient-to-b from-transparent to-background" /> */}
+      <div className="absolute bottom-0 h-[100px] w-full bg-gradient-to-b from-transparent to-background" />
       <div className="container mx-auto flex h-full flex-col items-center justify-center gap-5 text-center">
         <h1 className="mb-4 font-bricolage text-4xl font-bold md:text-5xl">
-          Explore AI for healthcare
+          AI for Healthcare: Explore Innovative Solutions for Better Patient
+          Care
         </h1>
         <p className="mb-8 text-base text-muted-foreground md:text-lg">
           Discover innovative artificial intelligence applications in

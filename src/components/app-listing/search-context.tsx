@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useState } from "react";
 
+//TODO: The number of companies is not relevant to the search context. I should move it..
 interface SearchContextType {
   searchQuery: string;
   setSearchQuery: (query: string) => void;

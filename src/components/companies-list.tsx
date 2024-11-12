@@ -16,7 +16,9 @@ export const CompaniesList = ({ companies }: { companies: ICompany[] }) => {
   return (
     <div className="grid grid-cols-1 gap-8 py-6 md:grid-cols-2 lg:grid-cols-3">
       {companies.map((company) => (
-        <Card key={company._id} className="flex flex-col">
+        <Card
+          key={company._id}
+          className="flex flex-col hover:bg-primary/10 hover:shadow-lg">
           <CardContent className="flex-grow p-6">
             <CardTitle className="mb-3 text-2xl font-bold">
               {company.name}
@@ -25,7 +27,7 @@ export const CompaniesList = ({ companies }: { companies: ICompany[] }) => {
               {company.category.map((category) => (
                 <span
                   key={category}
-                  className="rounded-full bg-secondary/30 px-3 py-1 text-sm text-secondary-foreground">
+                  className="rounded-full bg-primary/10 px-3 py-1 text-sm text-secondary-foreground">
                   {category}
                 </span>
               ))}

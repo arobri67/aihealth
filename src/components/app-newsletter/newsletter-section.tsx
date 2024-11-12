@@ -1,5 +1,5 @@
-import { NewsletterForm } from "../newsletter-form";
 import SectionHeader from "../section-header";
+import { NewsletterForm } from "./newsletter-form";
 
 const NewsletterSection = () => {
   return (
