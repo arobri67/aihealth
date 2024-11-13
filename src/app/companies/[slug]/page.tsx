@@ -33,18 +33,8 @@ export default async function CompanyPage({
   }
 
   return (
-    <main className="min-h-screen">
-      {/* <section className="container mx-auto py-20">
-        <div className="mb-8 text-center">
-          <h1 className="mb-4 font-bricolage text-5xl font-bold">
-            {selectedCompany.name}
-          </h1>
-          <p className="mb-8 italic text-muted-foreground">
-            {selectedCompany.companyDescription.overview.missionStatement}
-          </p>
-        </div>
-      </section> */}
+    <>
       <CompanyDetails company={selectedCompany} />
-    </main>
+    </>
   );
 }

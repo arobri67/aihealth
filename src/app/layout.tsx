@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Inter } from "next/font/google";
 
+import AddCompany from "@/components/app-add-company";
+import { AppFooter } from "@/components/app-footer";
 import AppNavBar from "@/components/app-navbar";
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
@@ -50,8 +52,12 @@ export default function RootLayout({
           `${inter.variable} ${bricolage.variable} h-full antialiased`
         )}>
         <AppNavBar />
-        {children}
-        <Toaster />
+        <main className="min-h-screen">
+          {children}
+          <Toaster />
+          <AddCompany />
+          <AppFooter />
+        </main>
       </body>
     </html>
   );

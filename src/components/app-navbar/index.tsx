@@ -4,9 +4,9 @@ import { Menu } from "lucide-react";
 
 import { ICategory } from "@/models/category";
 
+import Logo from "../logo";
 import { Button, Sheet, SheetContent, SheetTrigger } from "../ui";
 import CategorySelect from "./category-select";
-import Logo from "./logo";
 import NewsLetterButton from "./newsletter-button";
 import SubmitCompany from "./submit-company";
 

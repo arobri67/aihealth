@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 
 import db from "@/lib/db";
 import Category, { ICategory } from "@/models/category";
+import Company from "@/models/company";
 
 // Add this type that omits MongoDB-specific fields
 type CategoryInput = Omit<
@@ -13,7 +14,11 @@ type CategoryInput = Omit<
 export async function GET() {
   try {
     await db();
-    const categories = await Category.find({}).populate("companies");
+    await Company.init();
+    const categories = await Category.find({}).populate({
+      path: "companies",
+      model: "Company",
+    });
     return NextResponse.json(categories, { status: 200 });
   } catch (error) {
     return NextResponse.json(

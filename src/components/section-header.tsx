@@ -3,7 +3,7 @@ const SectionHeader = ({
   subtitle,
 }: {
   title: string;
-  subtitle: string;
+  subtitle?: string;
 }) => {
   return (
     <div className="text-center">

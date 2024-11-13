@@ -5,7 +5,7 @@ import { Button } from "../ui";
 const SubmitCompany = () => {
   return (
     <Button asChild variant="outline" className="rounded-full">
-      <a href="#" target="_blank" rel="noopener noreferrer">
+      <a href="#addcompany">
         <IconCirclePlus className="mr-1 h-4 w-4" />
         Add a Company
       </a>

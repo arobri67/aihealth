@@ -102,7 +102,7 @@ export const AddCompanyForm = () => {
           {isSubmitting ? "Adding..." : "Add Company"}
         </Button>
       </form>
-      <p className="text-sm text-muted-foreground">
+      <p className="text-center text-sm text-muted-foreground">
         We will review your company and add it to the list.
       </p>
     </div>

@@ -15,7 +15,7 @@ const CompanyDetails = ({ company }: { company: ICompany }) => {
         <CardHeader className="pb-0">
           <div className="flex flex-col items-start justify-between gap-4 sm:flex-row">
             <div>
-              <CardTitle className="mb-4 font-bricolage text-4xl">
+              <CardTitle className="mb-4 font-bricolage text-5xl">
                 {company.name}
               </CardTitle>
               <div className="mb-3 flex flex-wrap gap-2">
@@ -92,9 +92,9 @@ const CompanyDetails = ({ company }: { company: ICompany }) => {
                 (offering, index) => (
                   <li
                     key={index}
-                    className="flex items-center gap-2 rounded-full bg-secondary/50 px-3 py-1 text-secondary-foreground">
-                    <CheckCircle2 className="h-4 w-4 text-green-500" />
-                    <span>{offering}</span>
+                    className="flex h-12 items-center space-x-2 rounded-full bg-secondary/50 px-3 text-sm text-secondary-foreground md:text-base">
+                    <CheckCircle2 className="size-5 text-green-500" />
+                    <span className="w-full">{offering}</span>
                   </li>
                 )
               )}
@@ -106,7 +106,7 @@ const CompanyDetails = ({ company }: { company: ICompany }) => {
               target="_blank"
               rel="noopener noreferrer">
               <Image
-                src={`https://utfs.io/a/${env.UTSFS_ID}/${company.image.key}`}
+                src={`https://utfs.io/a/${env.UTSFS_ID_AI_HEALTHCARE_HUB}/${company.image.key}`}
                 alt={`${company.name} website screenshot`}
                 width={800}
                 height={600}

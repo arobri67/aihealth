@@ -19,6 +19,12 @@ const nextConfig = {
         port: "",
         pathname: "/a/ib6tfkyh7s/**",
       },
+      {
+        protocol: "https",
+        hostname: "utfs.io",
+        port: "",
+        pathname: "/a/uo6z56scs7/**",
+      },
     ],
   },
 };
