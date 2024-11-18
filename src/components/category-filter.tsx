@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-import { ICategory } from "@/models/category";
+import { Category } from "@/lib/actions";
 
 import { Button } from "./ui";
 
-const CategoryFilter = ({ categories }: { categories: ICategory[] }) => {
+const CategoryFilter = ({ categories }: { categories: Category[] }) => {
   return (
     <div className="flex flex-col items-center justify-center space-y-4 font-medium">
       <h3 className="text-lg font-normal text-foreground">

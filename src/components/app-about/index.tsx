@@ -1,7 +1,5 @@
 import Image from "next/image";
 
-import { env } from "@/env/server";
-
 import SectionHeader from "../section-header";
 
 export const About = () => {
@@ -10,7 +8,7 @@ export const About = () => {
       <div className="container mx-auto">
         <SectionHeader title="Why I built AI for Healthcare Hub?" />
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-          <p className="max-w-prose text-left text-lg text-muted-foreground">
+          <p className="max-w-prose text-center text-lg text-muted-foreground md:text-left">
             Hello! I&apos;m Arnaud, also known as irbo on social media. I am a
             scientist who has transitioned into software development, combining
             my passion for research and technology. I created the AI for
@@ -29,7 +27,7 @@ export const About = () => {
           </p>
           <div>
             <Image
-              src={`https://utfs.io/a/${env.UTSFS_ID_PORTFOLIO}/G8reinZKvneWO4VUFaMUqgAkIFtPeinYxDjQGysaK9pcRVHB`}
+              src="https://utfs.io/a/uo6z56scs7/G8reinZKvneWO4VUFaMUqgAkIFtPeinYxDjQGysaK9pcRVHB"
               alt="Irbo picture"
               width={250}
               height={300}

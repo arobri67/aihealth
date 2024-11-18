@@ -1,15 +1,11 @@
-import { notFound } from "next/navigation";
-
 import CompanyDetails from "@/components/company-details";
-import { ICompany } from "@/models/company";
+import { getCompanyDetails, getCompanySlug } from "@/lib/actions";
 
 export async function generateStaticParams() {
-  const companies = await fetch("http://localhost:3000/api/companies").then(
-    (res) => res.json() as Promise<ICompany[]>
-  );
+  const companySlugs = await getCompanySlug();
 
-  return companies.map((companie: ICompany) => ({
-    slug: companie.slug,
+  return companySlugs.map((company) => ({
+    slug: company.slug,
   }));
 }
 
@@ -20,17 +16,7 @@ export default async function CompanyPage({
 }) {
   const { slug } = params;
 
-  const companies = await fetch("http://localhost:3000/api/companies").then(
-    (res) => res.json() as Promise<ICompany[]>
-  );
-
-  const selectedCompany: ICompany | undefined = companies.find(
-    (company: ICompany) => company.slug === slug
-  );
-
-  if (!selectedCompany) {
-    notFound();
-  }
+  const selectedCompany = await getCompanyDetails(slug);
 
   return (
     <>

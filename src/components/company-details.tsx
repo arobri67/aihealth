@@ -3,12 +3,11 @@ import Image from "next/image";
 import { IconBrandLinkedin, IconBrandX } from "@tabler/icons-react";
 import { Calendar, CheckCircle2, ExternalLink, MapPin } from "lucide-react";
 
-import { env } from "@/env/server";
-import { ICompany } from "@/models/company";
+import { CompanyDetail } from "@/lib/actions";
 
 import { Button, Card, CardContent, CardHeader, CardTitle } from "./ui";
 
-const CompanyDetails = ({ company }: { company: ICompany }) => {
+const CompanyDetails = ({ company }: { company: CompanyDetail }) => {
   return (
     <section className="container mx-auto py-20">
       <Card className="overflow-hidden">
@@ -106,7 +105,7 @@ const CompanyDetails = ({ company }: { company: ICompany }) => {
               target="_blank"
               rel="noopener noreferrer">
               <Image
-                src={`https://utfs.io/a/${env.UTSFS_ID_AI_HEALTHCARE_HUB}/${company.image.key}`}
+                src={`https://utfs.io/a/ib6tfkyh7s/${company.image.key}`}
                 alt={`${company.name} website screenshot`}
                 width={800}
                 height={600}

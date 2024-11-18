@@ -41,7 +41,7 @@ export const AddCompanyForm = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center space-y-12">
+    <div className="container flex flex-col items-center justify-center space-y-12">
       <form
         onSubmit={handleSubmit(processForm)}
         className="flex flex-col justify-center space-y-6">
@@ -84,7 +84,7 @@ export const AddCompanyForm = () => {
           <Input
             id="url"
             type="text"
-            placeholder="Company URL"
+            placeholder="Company URL (https://...)"
             autoComplete="url"
             className="h-12 rounded-full bg-background pl-12 text-lg file:text-lg placeholder:text-lg focus:text-lg focus:outline-primary/10 md:text-lg"
             {...register("url")}

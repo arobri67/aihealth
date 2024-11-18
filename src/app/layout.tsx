@@ -4,6 +4,7 @@ import { Bricolage_Grotesque, Inter } from "next/font/google";
 import AddCompany from "@/components/app-add-company";
 import { AppFooter } from "@/components/app-footer";
 import AppNavBar from "@/components/app-navbar";
+import NewsletterSection from "@/components/app-newsletter/newsletter-section";
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
 
@@ -56,6 +57,7 @@ export default function RootLayout({
           {children}
           <Toaster />
           <AddCompany />
+          <NewsletterSection />
           <AppFooter />
         </main>
       </body>

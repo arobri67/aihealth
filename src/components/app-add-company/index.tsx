@@ -6,7 +6,7 @@ export default function AddCompany() {
     <section className="bg-background py-20" id="addcompany">
       <div className="container mx-auto">
         <SectionHeader
-          title="Join the AI for Healthcare Hub"
+          title="Add a company to the AI for Healthcare Hub"
           subtitle="Add your company to the directory to showcase your AI solutions and services."
         />
       </div>

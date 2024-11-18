@@ -1,11 +1,15 @@
 "use client";
 
-import { ICompany } from "@/models/company";
+import { CompanyOverview } from "@/lib/actions";
 
 import { CompaniesList } from "../companies-list";
 import { useSearch } from "./search-context";
 
-const FilteredCompaniesList = ({ companies }: { companies: ICompany[] }) => {
+const FilteredCompaniesList = ({
+  companies,
+}: {
+  companies: CompanyOverview[];
+}) => {
   const { searchQuery, numberOfCompanies } = useSearch();
 
   const filteredCompanies = companies

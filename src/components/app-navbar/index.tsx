@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { Menu } from "lucide-react";
 
-import { ICategory } from "@/models/category";
+import { getCategories } from "@/lib/actions";
 
 import Logo from "../logo";
 import { Button, Sheet, SheetContent, SheetTrigger } from "../ui";
@@ -11,9 +11,7 @@ import NewsLetterButton from "./newsletter-button";
 import SubmitCompany from "./submit-company";
 
 const AppNavBar = async () => {
-  const categories = await fetch("http://localhost:3000/api/categories").then(
-    (res) => res.json() as Promise<ICategory[]>
-  );
+  const categories = await getCategories();
 
   return (
     <header className="border-b">
@@ -42,7 +40,7 @@ const AppNavBar = async () => {
                   {categories.map((category) => (
                     <Link
                       className="hover text-lg font-normal"
-                      key={category.slug}
+                      key={category._id}
                       href={`/categories/${category.slug}`}>
                       <li>{category.name}</li>
                     </Link>

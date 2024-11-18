@@ -1,10 +1,14 @@
 import Link from "next/link";
 
-import { ICompany } from "@/models/company";
+import { CompanyOverview } from "@/lib/actions";
 
 import { Card, CardContent, CardFooter, CardTitle, buttonVariants } from "./ui";
 
-export const CompaniesList = ({ companies }: { companies: ICompany[] }) => {
+export const CompaniesList = ({
+  companies,
+}: {
+  companies: CompanyOverview[];
+}) => {
   if (companies.length === 0) {
     return (
       <div className="flex h-[300px] items-center justify-center text-center text-lg font-semibold text-muted-foreground">

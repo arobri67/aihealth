@@ -1,4 +1,4 @@
-import { ICompany } from "@/models/company";
+import { getCompaniesOverview } from "@/lib/actions";
 
 import FilteredCompaniesList from "./filtered-companies-list";
 import LoadMoreButton from "./load-more";
@@ -6,9 +6,7 @@ import SearchBar from "./search-bar";
 import { SearchProvider } from "./search-context";
 
 const ListingSection = async () => {
-  const companies = await fetch("http://localhost:3000/api/companies").then(
-    (res) => res.json() as Promise<ICompany[]>
-  );
+  const companies = await getCompaniesOverview();
 
   return (
     <SearchProvider>

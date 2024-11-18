@@ -1,14 +1,12 @@
 import { notFound } from "next/navigation";
 
 import { CompaniesList } from "@/components/companies-list";
-import { ICategory, ICategoryPopulated } from "@/models/category";
+import { getCategorySlug, getCompaniesInCategory } from "@/lib/actions";
 
 export async function generateStaticParams() {
-  const categories = await fetch("http://localhost:3000/api/categories").then(
-    (res) => res.json()
-  );
+  const categoriesSlugs = await getCategorySlug();
 
-  return categories.map((category: ICategory) => ({
+  return categoriesSlugs.map((category) => ({
     slug: category.slug,
   }));
 }
@@ -20,13 +18,7 @@ export default async function CategoryPage({
 }) {
   const { slug } = params;
 
-  const categories = await fetch("http://localhost:3000/api/categories").then(
-    (res) => res.json()
-  );
-
-  const allCompaniesInCategory: ICategoryPopulated = categories.find(
-    (category: ICategoryPopulated) => category.slug === slug
-  );
+  const allCompaniesInCategory = await getCompaniesInCategory(slug);
 
   if (!allCompaniesInCategory) {
     notFound();

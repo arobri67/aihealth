@@ -1,6 +1,6 @@
 "use client";
 
-import { ICategory } from "@/models/category";
+import { Category } from "@/lib/actions";
 
 import {
   Select,
@@ -10,11 +10,7 @@ import {
   SelectValue,
 } from "../ui";
 
-const CategorySelect = ({
-  categoriesList,
-}: {
-  categoriesList: ICategory[];
-}) => {
+const CategorySelect = ({ categoriesList }: { categoriesList: Category[] }) => {
   return (
     <Select
       onValueChange={(value) => {
@@ -27,7 +23,7 @@ const CategorySelect = ({
         <SelectValue placeholder="Select category" />
       </SelectTrigger>
       <SelectContent>
-        {categoriesList.map((category: ICategory) => (
+        {categoriesList.map((category) => (
           <SelectItem key={category.name} value={category.name}>
             {category.name}
           </SelectItem>
