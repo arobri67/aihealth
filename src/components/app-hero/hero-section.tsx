@@ -12,14 +12,14 @@ const HeroSection = async () => {
       <div className="absolute inset-0 -z-10 bg-[url('https://utfs.io/a/ib6tfkyh7s/GmyjMcnX7dhCUP5XNkJFK5OoPvA7BTZHIM6ecq8ihLaQ4mRr')] bg-cover bg-center opacity-15" />
 
       <div className="container mx-auto flex h-full flex-col items-center justify-center gap-5 text-center">
-        <h1 className="mb-4 font-bricolage text-3xl font-bold md:text-5xl">
-          AI for Healthcare: Explore Innovative Solutions for Better Patient
-          Care
+        <h1 className="space mb-4 font-bricolage text-3xl font-bold md:text-5xl">
+          AI for Healthcare: Transforming Patient Care with Artificial
+          Intelligence
         </h1>
         <p className="mb-8 text-base text-muted-foreground md:text-lg">
-          Discover innovative artificial intelligence applications in
-          healthcare, focusing on medical imaging analysis, electronic health
-          records, and drug discovery and development. Curated by
+          Explore how AI for healthcare enhances medical imaging analysis,
+          optimizes electronic health records, and accelerates drug discovery
+          and development. Curated by
           <Button
             asChild
             variant="default"

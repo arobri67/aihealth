@@ -8,6 +8,8 @@ export interface ICategory extends Document {
   slug: string;
   description: string;
   companies: mongoose.Types.ObjectId[] | ICompany[];
+  updatedAt: Date;
+  createdAt: Date;
 }
 
 export interface ICategoryPopulated extends Omit<ICategory, "companies"> {

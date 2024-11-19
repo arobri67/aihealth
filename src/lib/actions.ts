@@ -90,25 +90,46 @@ export async function getCategories(): Promise<Category[]> {
   }
 }
 
-export type CategorySlug = Pick<ICategory, "slug">;
+export type CategorySlug = Pick<ICategory, "slug" | "updatedAt">;
 export async function getCategorySlug(): Promise<CategorySlug[]> {
   try {
     await db();
-    const categorySlugs = await Category.find().select("slug").lean();
-    return categorySlugs;
+    const categorySlugs = await Category.find().select("slug updatedAt").lean();
+    return categorySlugs.map((category) => ({
+      slug: category.slug,
+      updatedAt: category.updatedAt,
+    }));
   } catch (error) {
     throw new Error(`Failed to get category slugs: ${error}`);
   }
 }
 
-export type CategoryDetails = {
+export type CategoryDetails = Pick<ICategory, "name" | "description" | "slug">;
+export async function getCategoryDetails(
+  slug: string
+): Promise<CategoryDetails> {
+  try {
+    await db();
+    const category = await Category.findOne({ slug })
+      .select("name description slug")
+      .lean();
+    if (!category) {
+      throw new Error(`Category not found with slug: ${slug}`);
+    }
+    return category;
+  } catch (error) {
+    throw new Error(`Failed to get category details: ${error}`);
+  }
+}
+
+export type CompaniesInCategory = {
   name: ICategory["name"];
   description: ICategory["description"];
   companies: CompanyOverview[];
 };
 export async function getCompaniesInCategory(
   slug: string
-): Promise<CategoryDetails> {
+): Promise<CompaniesInCategory> {
   try {
     await db();
     const allCompaniesInCategory = await Category.findOne({ slug })
@@ -158,15 +179,15 @@ export async function getCompaniesOverview(): Promise<CompanyOverview[]> {
   }
 }
 
-export type CompanySlug = Pick<ICompany, "slug">;
+export type CompanySlug = Pick<ICompany, "slug" | "updatedAt">;
 export async function getCompanySlug(): Promise<CompanySlug[]> {
   try {
     await db();
-    console.log("getCompanySlug by server action");
-    const companySlugs = await Company.find().select("slug").lean();
+    const companySlugs = await Company.find().select("slug updatedAt").lean();
 
     return companySlugs.map((company) => ({
       slug: company.slug,
+      updatedAt: company.updatedAt,
     }));
   } catch (error) {
     throw new Error(`Failed to get company slugs: ${error}`);
@@ -175,12 +196,16 @@ export async function getCompanySlug(): Promise<CompanySlug[]> {
 
 export type CompanyDetail = Pick<
   ICompany,
-  "name" | "category" | "contactInformation" | "companyDescription" | "image"
+  | "name"
+  | "category"
+  | "contactInformation"
+  | "companyDescription"
+  | "image"
+  | "slug"
 >;
 export async function getCompanyDetails(slug: string): Promise<CompanyDetail> {
   try {
     await db();
-    console.log("getCompanyDetails by server action");
     const company = await Company.findOne({ slug }).lean();
     if (!company) {
       throw new Error(`Company not found with slug: ${slug}`);
