@@ -6,6 +6,7 @@ import { AppFooter } from "@/components/app-footer";
 import AppNavBar from "@/components/app-navbar";
 import NewsletterSection from "@/components/app-newsletter/newsletter-section";
 import { Toaster } from "@/components/ui/sonner";
+import { env } from "@/env/client";
 import { cn } from "@/lib/utils";
 
 import "./globals.css";
@@ -26,7 +27,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://aiforhealthcarehub.com"),
+  metadataBase: new URL(`${env.NEXT_PUBLIC_BASE_URL}`),
   openGraph: {
     siteName: "AI for Healthcare Hub",
     type: "website",

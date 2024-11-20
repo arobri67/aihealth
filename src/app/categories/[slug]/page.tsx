@@ -1,11 +1,13 @@
 import { notFound } from "next/navigation";
 
 import { CompaniesList } from "@/components/companies-list";
+import { env } from "@/env/client";
 import {
   getCategoryDetails,
   getCategorySlug,
   getCompaniesInCategory,
 } from "@/lib/actions";
+import { generateCommonMetadata } from "@/lib/metadata";
 
 export async function generateStaticParams() {
   const categoriesSlugs = await getCategorySlug();
@@ -21,43 +23,27 @@ export async function generateMetadata({
   params: { slug: string };
 }) {
   const category = await getCategoryDetails(params.slug);
-  return {
-    title: `${category.name} - AI for Healthcare Hub`,
-    description: category.description,
-    openGraph: {
-      title: `${category.name} - AI for Healthcare Hub`,
-      description: category.description,
-      type: "website",
-      url: `https://aiforhealthcarehub.com/categories/${category.slug}`,
-      images: [
-        {
-          url: "https://utfs.io/a/ib6tfkyh7s/GmyjMcnX7dhCkXvOv8jrUEiVcDq2KmJ5ao4NeFY8dHB9gIOl",
-          alt: `${category.name} - AI for Healthcare Hub`,
-          width: 1200,
-          height: 630,
-          type: "image/png",
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      site: "@irboa67",
-      creator: "@irboa67",
-      title: `${category.name} - AI for Healthcare Hub`,
-      description: category.description,
-      images: [
-        {
-          url: "https://utfs.io/a/ib6tfkyh7s/GmyjMcnX7dhCkXvOv8jrUEiVcDq2KmJ5ao4NeFY8dHB9gIOl",
-          alt: `${category.name} - AI for Healthcare Hub`,
-          width: 1200,
-          height: 630,
-        },
-      ],
-    },
-    alternates: {
-      canonical: `https://aiforhealthcarehub.com/categories/${category.slug}`,
-    },
-  };
+
+  const title = `${category.name} - AI for Healthcare Hub`;
+  const description = category.description;
+  const url = `${env.NEXT_PUBLIC_BASE_URL}/categories/${category.slug}`;
+  const imageUrl = `${env.NEXT_PUBLIC_OPENGRAPH_PIC}`;
+  const keywords = [
+    "AI for healthcare",
+    "medical imaging analysis",
+    "electronic health records",
+    "drug discovery",
+    "AI in healthcare",
+    "AI in medicine",
+  ];
+
+  return generateCommonMetadata({
+    title,
+    description,
+    url,
+    imageUrl,
+    keywords,
+  });
 }
 
 export default async function CategoryPage({

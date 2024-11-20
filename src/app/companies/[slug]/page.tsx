@@ -1,5 +1,7 @@
 import CompanyDetails from "@/components/company-details";
+import { env } from "@/env/client";
 import { getCompanyDetails, getCompanySlug } from "@/lib/actions";
+import { generateCommonMetadata } from "@/lib/metadata";
 
 export async function generateStaticParams() {
   const companySlugs = await getCompanySlug();
@@ -16,43 +18,26 @@ export async function generateMetadata({
 }) {
   const selectedCompany = await getCompanyDetails(params.slug);
 
-  return {
-    title: `${selectedCompany.name} - AI for Healthcare Hub`,
-    description: selectedCompany.companyDescription.briefDescription,
-    openGraph: {
-      title: `${selectedCompany.name} - AI for Healthcare Hub`,
-      description: selectedCompany.companyDescription.briefDescription,
-      type: "website",
-      url: `https://aiforhealthcarehub.com/companies/${selectedCompany.slug}`,
-      images: [
-        {
-          url: "https://utfs.io/a/ib6tfkyh7s/GmyjMcnX7dhCkXvOv8jrUEiVcDq2KmJ5ao4NeFY8dHB9gIOl",
-          alt: `${selectedCompany.name} - AI for Healthcare Hub`,
-          width: 1200,
-          height: 630,
-          type: "image/png",
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      site: "@irboa67",
-      creator: "@irboa67",
-      title: `${selectedCompany.name} - AI for Healthcare Hub`,
-      description: selectedCompany.companyDescription.briefDescription,
-      images: [
-        {
-          url: "https://utfs.io/a/ib6tfkyh7s/GmyjMcnX7dhCkXvOv8jrUEiVcDq2KmJ5ao4NeFY8dHB9gIOl",
-          alt: `${selectedCompany.name} - AI for Healthcare Hub`,
-          width: 1200,
-          height: 630,
-        },
-      ],
-    },
-    alternates: {
-      canonical: `https://aiforhealthcarehub.com/companies/${selectedCompany.slug}`,
-    },
-  };
+  const title = `${selectedCompany.name} - AI for Healthcare Hub`;
+  const description = selectedCompany.companyDescription.briefDescription;
+  const url = `${env.NEXT_PUBLIC_BASE_URL}/companies/${selectedCompany.slug}`;
+  const imageUrl = `${env.NEXT_PUBLIC_OPENGRAPH_PIC}`;
+  const keywords = [
+    "AI for healthcare",
+    "medical imaging analysis",
+    "electronic health records",
+    "drug discovery",
+    "AI in healthcare",
+    "AI in medicine",
+  ];
+
+  return generateCommonMetadata({
+    title,
+    description,
+    url,
+    imageUrl,
+    keywords,
+  });
 }
 
 export default async function CompanyPage({
