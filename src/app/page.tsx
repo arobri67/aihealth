@@ -31,11 +31,11 @@ export const metadata: Metadata = generateCommonMetadata({
 
 export default function Home() {
   return (
-    <>
+    <section>
       <HeroSection />
       <ListingSection />
       <FAQSection />
       <About />
-    </>
+    </section>
   );
 }

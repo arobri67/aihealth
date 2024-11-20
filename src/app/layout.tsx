@@ -114,8 +114,8 @@ export default function RootLayout({
           <Toaster />
           <AddCompany />
           <NewsletterSection />
-          <AppFooter />
         </main>
+        <AppFooter />
       </body>
     </html>
   );
