@@ -1,8 +1,11 @@
 import Image from "next/image";
 
+import { env } from "@/env/client";
+
 import SectionHeader from "../section-header";
 
 export const About = () => {
+  const aboutImage = env.NEXT_PUBLIC_ABOUT_IMAGE;
   return (
     <section className="bg-accent/30 py-20" id="about">
       <div className="container mx-auto">
@@ -27,7 +30,7 @@ export const About = () => {
           </p>
           <div>
             <Image
-              src="https://utfs.io/a/uo6z56scs7/G8reinZKvneWO4VUFaMUqgAkIFtPeinYxDjQGysaK9pcRVHB"
+              src={aboutImage}
               alt="Irbo picture"
               width={250}
               height={300}

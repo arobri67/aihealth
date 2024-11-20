@@ -5,6 +5,7 @@ export const env = createEnv({
   server: {
     NODE_ENV: z.enum(["development", "production"]),
     MONGODB_URL: z.string().url(),
+    UTSFS_ID_AI_HEALTHCARE_HUB: z.string().min(1),
   },
   // Called when the schema validation fails.
   onValidationError: (error: ZodError) => {
