@@ -1,20 +1,20 @@
 "use client";
 
+import { useCompaniesNb } from "../companies-nb-context";
 import { Button } from "../ui";
-import { useSearch } from "./search-context";
 
 export default function LoadMoreButton({
   totalCompanies,
 }: {
   totalCompanies: number;
 }) {
-  const { setNumberOfCompanies, numberOfCompanies } = useSearch();
+  const { setCompaniesNb, companiesNb } = useCompaniesNb();
 
   const handleLoadMore = () => {
-    setNumberOfCompanies(totalCompanies);
+    setCompaniesNb(totalCompanies);
   };
 
-  if (numberOfCompanies === totalCompanies) return null;
+  if (companiesNb === totalCompanies) return null;
 
   return (
     <Button

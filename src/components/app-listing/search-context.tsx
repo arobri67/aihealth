@@ -2,27 +2,21 @@
 
 import { createContext, useContext, useState } from "react";
 
-//TODO: The number of companies is not relevant to the search context. I should move it..
 interface SearchContextType {
   searchQuery: string;
   setSearchQuery: (query: string) => void;
-  numberOfCompanies: number;
-  setNumberOfCompanies: (number: number) => void;
 }
 
 const SearchContext = createContext<SearchContextType | undefined>(undefined);
 
 export function SearchProvider({ children }: { children: React.ReactNode }) {
   const [searchQuery, setSearchQuery] = useState("");
-  const [numberOfCompanies, setNumberOfCompanies] = useState(12);
 
   return (
     <SearchContext.Provider
       value={{
         searchQuery,
         setSearchQuery,
-        numberOfCompanies,
-        setNumberOfCompanies,
       }}>
       {children}
     </SearchContext.Provider>

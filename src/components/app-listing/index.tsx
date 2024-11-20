@@ -1,5 +1,6 @@
 import { getCompaniesOverview } from "@/lib/actions";
 
+import { CompaniesNbProvider } from "../companies-nb-context";
 import FilteredCompaniesList from "./filtered-companies-list";
 import LoadMoreButton from "./load-more";
 import SearchBar from "./search-bar";
@@ -10,11 +11,13 @@ const ListingSection = async () => {
 
   return (
     <SearchProvider>
-      <section className="container mx-auto flex flex-col items-center pb-20 pt-10">
-        <SearchBar />
-        <FilteredCompaniesList companies={companies} />
-        <LoadMoreButton totalCompanies={companies.length} />
-      </section>
+      <CompaniesNbProvider>
+        <section className="container mx-auto flex flex-col items-center pb-20 pt-10">
+          <SearchBar />
+          <FilteredCompaniesList companies={companies} />
+          <LoadMoreButton totalCompanies={companies.length} />
+        </section>
+      </CompaniesNbProvider>
     </SearchProvider>
   );
 };
