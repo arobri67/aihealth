@@ -7,7 +7,7 @@ import ListingSection from "@/components/app-listing/index";
 import { env } from "@/env/client";
 import { generateCommonMetadata } from "@/lib/metadata";
 
-const title = "AI for Healthcare Hub";
+const title = "Welcome to AI for Healthcare Hub";
 const description =
   "Explore how AI for healthcare enhances medical imaging analysis, optimizes electronic health records, and accelerates drug discovery and development.";
 const url = `${env.NEXT_PUBLIC_BASE_URL}`;
