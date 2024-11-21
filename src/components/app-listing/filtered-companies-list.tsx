@@ -3,6 +3,7 @@
 import { CompanyOverview } from "@/lib/actions";
 
 import { CompaniesList } from "../companies-list";
+import { useCompaniesNb } from "../companies-nb-context";
 import { useSearch } from "./search-context";
 
 const FilteredCompaniesList = ({
@@ -10,7 +11,8 @@ const FilteredCompaniesList = ({
 }: {
   companies: CompanyOverview[];
 }) => {
-  const { searchQuery, numberOfCompanies } = useSearch();
+  const { searchQuery } = useSearch();
+  const { companiesNb } = useCompaniesNb();
 
   const filteredCompanies = companies
     .filter((company) =>
@@ -18,7 +20,7 @@ const FilteredCompaniesList = ({
         .toLowerCase()
         .includes(searchQuery.toLowerCase())
     )
-    .slice(0, numberOfCompanies);
+    .slice(0, companiesNb);
 
   if (filteredCompanies.length === 0) {
     return (
