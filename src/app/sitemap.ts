@@ -2,6 +2,7 @@ import { MetadataRoute } from "next";
 
 import { env } from "@/env/client";
 import { getCategorySlug, getCompanySlug } from "@/lib/actions";
+import { getPosts } from "@/lib/posts";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const companySlugs = await getCompanySlug();
@@ -20,6 +21,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${env.NEXT_PUBLIC_BASE_URL}/categories/${slug}`,
       lastModified: new Date(updatedAt),
       changeFrequency: "monthly",
+      priority: 0.8,
+    })
+  );
+
+  const posts = await getPosts();
+
+  const postEntries: MetadataRoute.Sitemap = posts.map(
+    ({ slug, publishedAt }) => ({
+      url: `${env.NEXT_PUBLIC_BASE_URL}/blog/${slug}`,
+      lastModified: new Date(publishedAt || ""),
+      changeFrequency: "weekly",
       priority: 0.8,
     })
   );
@@ -43,8 +55,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    {
+      url: `${env.NEXT_PUBLIC_BASE_URL}/blog`,
+      lastModified: new Date(2024, 11, 20),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
 
     ...companyEntries,
     ...categoryEntries,
+    ...postEntries,
   ];
 }

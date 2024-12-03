@@ -9,7 +9,7 @@ const HeroSection = async () => {
   const heroImage = env.NEXT_PUBLIC_HERO_IMAGE;
 
   return (
-    <section className="relative h-[750px]">
+    <section className="relative h-[750px] md:h-[560px]">
       <div
         className="absolute inset-0 -z-10 bg-cover bg-center opacity-15"
         style={{ backgroundImage: `url(${heroImage})` }}

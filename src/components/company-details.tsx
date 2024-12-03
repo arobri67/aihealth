@@ -1,7 +1,14 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { IconBrandLinkedin, IconBrandX } from "@tabler/icons-react";
-import { Calendar, CheckCircle2, ExternalLink, MapPin } from "lucide-react";
+import {
+  ArrowLeftIcon,
+  Calendar,
+  CheckCircle2,
+  ExternalLink,
+  MapPin,
+} from "lucide-react";
 
 import { env } from "@/env/server";
 import { CompanyDetail } from "@/lib/actions";
@@ -11,6 +18,14 @@ import { Button, Card, CardContent, CardHeader, CardTitle } from "./ui";
 const CompanyDetails = ({ company }: { company: CompanyDetail }) => {
   return (
     <section className="container mx-auto py-20">
+      <div>
+        <Link
+          href="/"
+          className="mb-8 inline-flex items-center gap-2 text-sm font-light text-muted-foreground transition-colors hover:text-foreground">
+          <ArrowLeftIcon className="h-5 w-5" />
+          Back to Homepage
+        </Link>
+      </div>
       <Card className="overflow-hidden">
         <CardHeader className="pb-0">
           <div className="flex flex-col items-start justify-between gap-4 sm:flex-row">

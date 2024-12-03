@@ -7,6 +7,7 @@ export const env = createEnv({
     NEXT_PUBLIC_OPENGRAPH_PIC: z.string().url(),
     NEXT_PUBLIC_HERO_IMAGE: z.string().url(),
     NEXT_PUBLIC_ABOUT_IMAGE: z.string().url(),
+    NEXT_PUBLIC_BLOG_IMAGE: z.string().url(),
   },
   // Called when the schema validation fails.
   onValidationError: (error: ZodError) => {
@@ -30,6 +31,9 @@ export const env = createEnv({
     NEXT_PUBLIC_ABOUT_IMAGE:
       // eslint-disable-next-line n/no-process-env
       process.env.NEXT_PUBLIC_ABOUT_IMAGE,
+    NEXT_PUBLIC_BLOG_IMAGE:
+      // eslint-disable-next-line n/no-process-env
+      process.env.NEXT_PUBLIC_BLOG_IMAGE,
   },
   emptyStringAsUndefined: true,
 });

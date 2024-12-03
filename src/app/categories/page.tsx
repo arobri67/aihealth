@@ -34,7 +34,7 @@ export default async function CategoriesPage() {
     <section className="container mx-auto py-20">
       <SectionHeader
         title="All Categories of AI for Healthcare Hub"
-        subtitle="Currently we only have 10 categories, but we will add more soon!"
+        subtitle={`Currently we only have ${categories.length} categories, but we will add more soon!`}
       />
       <CategoryFilter categories={categories} />
     </section>
