@@ -59,6 +59,7 @@ npm run dev
 
 ## Project Structure
 
+```
 src/
 ├── app/ # Next.js app directory
 ├── components/ # React components
@@ -67,6 +68,7 @@ src/
 ├── lib/ # Utility functions
 ├── models/ # MongoDB models
 └── types/ # TypeScript types
+```
 
 ## Features in Detail
 
