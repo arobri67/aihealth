@@ -13,10 +13,6 @@ export interface ICategory extends Document {
   createdAt: Date;
 }
 
-export interface ICategoryPopulated extends Omit<ICategory, "companies"> {
-  companies: ICompany[];
-}
-
 const CategorySchema: Schema = new Schema(
   {
     featured: { type: Boolean, required: true },
