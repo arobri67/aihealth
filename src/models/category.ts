@@ -4,6 +4,7 @@ import { ICompany } from "./company";
 
 export interface ICategory extends Document {
   _id: string;
+  featured: boolean;
   name: string;
   slug: string;
   description: string;
@@ -18,6 +19,7 @@ export interface ICategoryPopulated extends Omit<ICategory, "companies"> {
 
 const CategorySchema: Schema = new Schema(
   {
+    featured: { type: Boolean, required: true },
     name: { type: String, required: true },
     slug: { type: String, required: true },
     description: { type: String, required: true },
