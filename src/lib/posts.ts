@@ -14,6 +14,7 @@ export type PostMetadata = {
   description?: string;
   image?: string;
   publishedAt?: string;
+  published?: boolean;
   slug: string;
 };
 
@@ -44,7 +45,8 @@ export const getPosts = async (limit?: number): Promise<PostMetadata[]> => {
       } else {
         return -1;
       }
-    });
+    })
+    .filter((post) => post.published);
 
   if (limit) {
     return posts.slice(0, limit);
