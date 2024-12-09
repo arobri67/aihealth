@@ -104,6 +104,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="AI Healthcare Hub" />
         <link rel="manifest" href="/favicon/site.webmanifest" />
       </head>
+      <script src="https://www.websense.online/cdn/websense.js" defer></script>
       <body
         className={cn(
           `${inter.variable} ${bricolage.variable} h-full antialiased`
