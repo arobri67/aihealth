@@ -19,6 +19,7 @@ export function generateCommonMetadata({
     keywords,
     openGraph: {
       title,
+      siteName: "AI for Healthcare Hub",
       description,
       type: "website",
       url,
