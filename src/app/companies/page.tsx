@@ -35,6 +35,7 @@ export default async function CompaniesPage() {
       <SectionHeader
         title="All Companies of AI for Healthcare Hub"
         subtitle="Explore all companies listed on AI for Healthcare Hub"
+        h1={true}
       />
       <CompaniesList companies={companies} />
     </section>

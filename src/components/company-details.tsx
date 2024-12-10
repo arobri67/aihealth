@@ -31,7 +31,7 @@ const CompanyDetails = ({ company }: { company: CompanyDetail }) => {
           <div className="flex flex-col items-start justify-between gap-4 sm:flex-row">
             <div>
               <CardTitle className="mb-4 font-bricolage text-5xl">
-                {company.name}
+                <h1>{company.name}</h1>
               </CardTitle>
               <div className="mb-3 flex flex-wrap gap-2">
                 {company.category.map((category) => (

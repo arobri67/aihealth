@@ -31,7 +31,7 @@ export default async function PostsPage() {
   const posts = await getPosts();
   return (
     <section className="container mx-auto min-h-screen py-20">
-      <SectionHeader title="Blog" />
+      <SectionHeader title="Blog" h1={true} />
       <PostsList posts={posts} />
     </section>
   );

@@ -62,9 +62,9 @@ export default async function CategoryPage({
   return (
     <section className="container mx-auto py-20">
       <div className="mb-8 text-center">
-        <h2 className="mb-4 font-bricolage text-4xl font-bold md:text-5xl">
+        <h1 className="mb-4 font-bricolage text-4xl font-bold md:text-5xl">
           {allCompaniesInCategory.name}
-        </h2>
+        </h1>
         <p className="mb-8 text-base text-muted-foreground md:text-lg">
           {allCompaniesInCategory.description}
         </p>

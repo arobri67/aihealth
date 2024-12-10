@@ -35,6 +35,7 @@ export default async function CategoriesPage() {
       <SectionHeader
         title="All Categories of AI for Healthcare Hub"
         subtitle={`Currently we only have ${categories.length} categories, but we will add more soon!`}
+        h1={true}
       />
       <CategoryFilter categories={categories} />
     </section>
