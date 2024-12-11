@@ -106,6 +106,7 @@ export default function RootLayout({
         <script
           src="https://www.websense.online/cdn/websense.js"
           defer></script>
+        <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
       </head>
       <body
         className={cn(
