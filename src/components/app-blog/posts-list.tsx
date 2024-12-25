@@ -12,7 +12,7 @@ const PostsList = ({ posts }: { posts: PostMetadata[] }) => {
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
       {posts.map((post) => (
         <Link key={post.slug} href={`/blog/${post.slug}`} passHref>
-          <Card className="transition-shadow duration-300 hover:shadow-lg">
+          <Card className="transition-shadow duration-300 hover:shadow-lg h-full">
             <CardHeader>
               {post.image && (
                 <Image

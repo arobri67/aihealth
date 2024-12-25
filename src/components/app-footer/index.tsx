@@ -5,6 +5,36 @@ import { getCategories } from "@/lib/actions";
 import Logo from "../logo";
 import { Button } from "../ui/button";
 
+const TOP_COMPANIES = [
+  //top 5 companies 25/12/2024
+  {
+    name: "aidoc",
+    slug: "aidoc",
+  },
+  {
+    name: "butterfly network",
+    slug: "butterfly-network",
+  },
+  {
+    name: "tempus ai",
+    slug: "tempus",
+  },
+  {
+    name: "qure ai",
+    slug: "qure-ai",
+  },
+  {
+    name: "recursion pharmaceuticals",
+    slug: "recursion-pharmaceuticals",
+  },
+  {
+    name: "PathAi",
+    slug: "pathai",
+  },
+
+
+];
+
 export const AppFooter = async () => {
   const categories = await getCategories();
 
@@ -31,16 +61,13 @@ export const AppFooter = async () => {
           ))}
         </ul>
         <ul className="flex flex-col space-y-2">
-          <li>
-            <Button variant="link" asChild className="p-0">
-              <Link href="/companies">All Companies</Link>
-            </Button>
-          </li>
-          <li>
-            <Button variant="link" asChild className="p-0">
-              <Link href="/categories">All Categories</Link>
-            </Button>
-          </li>
+          {TOP_COMPANIES.map((company) => (
+            <li key={company.slug}>
+              <Button variant="link" asChild className="p-0 font-normal text-foreground hover:text-primary">
+                <Link className="capitalize" href={`/companies/${company.slug}`}>{company.name}</Link>
+              </Button>
+            </li>
+          ))}
           <li>
             <div className="flex flex-col space-y-2">
               <Logo />
