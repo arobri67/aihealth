@@ -12,7 +12,7 @@ export const About = () => {
         <SectionHeader title="Why I built AI for Healthcare Hub?" />
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <p className="max-w-prose text-center text-lg text-muted-foreground md:text-left">
-            Hello! I&apos;m Arnaud, also known as irbo on social media. I am a
+            Hello! I&apos;m Arnaud!. I am a
             scientist who has transitioned into software development, combining
             my passion for research and technology. I created the AI for
             Healthcare Hub as a project that merges my interests in healthcare
