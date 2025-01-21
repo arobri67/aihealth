@@ -103,10 +103,11 @@ export default function RootLayout({
         />
         <meta name="apple-mobile-web-app-title" content="AI Healthcare Hub" />
         <link rel="manifest" href="/favicon/site.webmanifest" />
-        <script
+        {/* <script
           src="https://www.websense.online/cdn/websense.js"
           defer></script>
-        <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+        <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script> */}
+        <script defer data-domain="aiforhealthcarehub.com" src="https://plausible.irbo.dev/js/script.outbound-links.tagged-events.js"></script>
       </head>
       <body
         className={cn(
