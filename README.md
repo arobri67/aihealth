@@ -92,20 +92,10 @@ src/
 - MongoDB integration
 - Validation and error handling
 
-### Company Submission
-
-- Form-based submission
-- Data validation
-- Admin review process
-
-## Contributing
-
-We welcome contributions! Please see our contributing guidelines for more details.
-
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Author
 
-Created by Arnaud (irbo) - Combining expertise in scientific research and software development to bridge the gap between healthcare and artificial intelligence.
+Created by Arnaud
