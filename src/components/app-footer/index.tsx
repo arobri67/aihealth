@@ -5,31 +5,35 @@ import { getCategories } from "@/lib/actions";
 import Logo from "../logo";
 import { Button } from "../ui/button";
 
-const TOP_COMPANIES = [
+const TOP_LINKS = [
   //top 5 companies 25/12/2024
   {
     name: "aidoc",
-    slug: "aidoc",
+    slug: "companies/aidoc",
   },
   {
     name: "butterfly network",
-    slug: "butterfly-network",
+    slug: "companies/butterfly-network",
   },
   {
     name: "tempus ai",
-    slug: "tempus",
+    slug: "companies/tempus",
   },
   {
     name: "qure ai",
-    slug: "qure-ai",
+    slug: "companies/qure-ai",
   },
   {
     name: "recursion pharmaceuticals",
-    slug: "recursion-pharmaceuticals",
+    slug: "companies/recursion-pharmaceuticals",
   },
   {
     name: "PathAi",
-    slug: "pathai",
+    slug: "companies/pathai",
+  },
+  {
+    name: "Butterfly Network's Portable Ultrasound",
+    slug: "blog/ai-powered-medical-imaging-revolution-butterfly-network-transforming-healthcare",
   },
 
 
@@ -61,10 +65,10 @@ export const AppFooter = async () => {
           ))}
         </ul>
         <ul className="flex flex-col space-y-2">
-          {TOP_COMPANIES.map((company) => (
-            <li key={company.slug}>
+          {TOP_LINKS.map((link) => (
+            <li key={link.slug}>
               <Button variant="link" asChild className="p-0 font-normal text-foreground hover:text-primary">
-                <Link className="capitalize" href={`/companies/${company.slug}`}>{company.name}</Link>
+                <Link className="capitalize" href={`/${link.slug}`}>{link.name}</Link>
               </Button>
             </li>
           ))}
