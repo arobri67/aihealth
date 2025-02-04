@@ -102,6 +102,7 @@ export default function RootLayout({
           href="/favicon/apple-touch-icon.png"
         />
         <meta name="apple-mobile-web-app-title" content="AI Healthcare Hub" />
+        <meta name="saashub-verification" content="mmn6raknlrpx" />
         <link rel="manifest" href="/favicon/site.webmanifest" />
         {/* <script
           src="https://www.websense.online/cdn/websense.js"
