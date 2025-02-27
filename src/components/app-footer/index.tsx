@@ -33,7 +33,7 @@ const TOP_LINKS = [
   },
   {
     name: "Butterfly Network's Portable Ultrasound",
-    slug: "blog/ai-powered-medical-imaging-revolution-butterfly-network-transforming-healthcare",
+    slug: "blog/how-butterfly-network-portable-ultrasound-is-changing-healthcare",
   },
 
 
