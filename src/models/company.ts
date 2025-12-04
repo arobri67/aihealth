@@ -1,7 +1,7 @@
-import mongoose, { Document, Model, Schema } from "mongoose";
+import mongoose, { Document, Model, Schema, Types } from "mongoose";
 
 export interface ICompany extends Document {
-  _id: string;
+  _id: Types.ObjectId;
   featured: boolean;
   name: string;
   slug: string;

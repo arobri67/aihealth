@@ -72,9 +72,11 @@ export async function addCompany(data: AddCompanyData) {
   }
 }
 
-export type Category = Pick<ICategory, "_id" | "name" | "slug"> & {
+// Fixed: Remove _id from Pick, add it separately
+export type Category = Pick<ICategory, "name" | "slug"> & {
   _id: string;
 };
+
 export async function getCategories(): Promise<Category[]> {
   try {
     await db();
@@ -122,11 +124,18 @@ export async function getCategoryDetails(
   }
 }
 
+// Fixed: Remove _id from Pick, add it separately
+export type CompanyOverview = Pick<
+  ICompany,
+  "featured" | "name" | "slug" | "category" | "companyDescription"
+> & { _id: string };
+
 export type CompaniesInCategory = {
   name: ICategory["name"];
   description: ICategory["description"];
   companies: CompanyOverview[];
 };
+
 export async function getCompaniesInCategory(
   slug: string
 ): Promise<CompaniesInCategory> {
@@ -156,11 +165,6 @@ export async function getCompaniesInCategory(
     throw new Error(`Failed to get category details: ${error}`);
   }
 }
-
-export type CompanyOverview = Pick<
-  ICompany,
-  "_id" | "featured" | "name" | "slug" | "category" | "companyDescription"
-> & { _id: string };
 
 export async function getCompaniesOverview(): Promise<CompanyOverview[]> {
   try {
